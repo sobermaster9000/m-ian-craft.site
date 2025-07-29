@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M-Ian-Craft</title>
+  <link rel="icon" type="image/x-icon" href="icon.ico">
+  <style>
+    :root {
+      --bg-col: rgba(0, 0, 0, 0.5);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      font-size: 125%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: white;
+      size: 50%;
+    }
+    @media (max-width: 750px) {
+      html, body {
+        font-size: 100%;
+      }
+    }
+    @media (max-width: 450px) {
+      html, body {
+        font-size: 80%;
+      }
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+    .main-container {
+      height: 80%;
+      width: 70%;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 450px) {
+      .main-container {
+        width: 100%;
+      }
+    }
+    .nav {
+      margin: 0;
+      height: 10%;
+      display: flex;
+      justify-content: center
+    }
+    .nav div {
+      margin: 5px;
+      padding: 0 1%;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav div:hover {
+      cursor: pointer;
+      color: black;
+    }
+    .content {
+      margin: 0;
+      height: 85%;
+      border-radius: 5px;
+      background-color: var(--bg-col);
+    }
+    .content-page {
+      display: none;
+      overflow: auto;
+    }
+    .content-page h1, p {
+      text-align: center;
+    }
+    .page1 {
+      display: block;
+      height: 100%;
+    }
+    .page1 img {
+      max-height: 60%;
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-self: center;
+    }
+    @media (max-width: 450px) {
+      .page1 img {
+        max-width: 50%;
+      }
+    }
+    .page2 {
+      /* display: flex; */
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+    .downloads {
+      padding: 5px;
+      width: 50%;
+      height: 60%;
+      border-radius: 5px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      background-color: var(--bg-col);
+      scrollbar-color: var(--bg-col) gray;
+      scrollbar-width: thin;
+    }
+    @media (max-width: 450px) {
+      .downloads {
+        width: 100%;
+      }
+    }
+    .downloads::-webkit-scrollbar {
+      width: 12px;
+    }
+    .downloads::-webkit-scrollbar-track {
+      background: var(--bg-col);
+    }
+    .downloads::-webkit-scrollbar-thumb {
+      background: gray;
+      border-radius: 8px;
+    }
+    .download-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px 0;
+      padding: 0 10px;
+      width: 95%;
+      height: 15%;
+      border-radius: 5px;
+      background-color: gray;
+    }
+    .download-btn {
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .info-btn {
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      font-family: 'Times New Roman', Times, serif;
+      font-style: italic;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .download-info {
+      background-color: white;
+      color: black;
+      width: 95%;
+      padding: 10px;
+      border-radius: 5px;;
+    }
+    .page3 form {
+      height: 100%;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      overflow: hidden;
+    }
+    .input-row {
+      height: 100%;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .input-row input {
+      flex: 1;
+    }
+    .input-row input[type="text"] {
+      width: 50%;
+      height: 3rem;
+      border-radius: 5px;
+      font-size: 100%;
+    }
+    textarea {
+      height: 9rem;
+      border-radius: 5px;
+      resize: vertical;
+      margin-bottom: 0.5rem;
+      font-size: 125%;
+    }
+    input[type="submit"] {
+      margin: auto;
+      height: 3rem;
+      width: 25%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 100%;
+    }  
+    .footer {
+      margin: 0;
+      height: 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer * {
+      margin: 0;
+      font-size: 70%;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="nav">
+      <div style="background-color: var(--bg-col);">Home</div>
+      <div>Downloads</div>
+      <div>Contact Dev</div>
+    </div>
+    <div class="content">
+      <div class="content-page page1">
+        <h1>M-Ian-Craft</h1>
+        <p>A minecraft clone made by a guy named Ian.</p>
+        <img src="icon.png" alt="M-Ian-Craft Icon">
+      </div>
+      <div class="content-page page2">
+        <h1>Downloads</h1>
+        <div class="downloads">
+          <div class="download-item">
+            <span>Version 0</span>
+            <div class="download-btns">
+              <a href="m-ian-craft-v0.rar" download="m-ian-craft-v0.rar"><button class="download-btn">&#8681;</button></a>
+              <button class="info-btn" onclick="toggleInfo(this)">i</button>
+            </div>
+          </div>
+          <div class="download-info hidden">
+            <em>SpectatorCraft</em>
+            <br><br>
+            <span>Initial version of the game with only one gamemode: spectator mode.</span>
+          </div>
+        </div>
+      </div>
+      <div class="content-page page3">
+        <h1>Contact Dev</h1>
+        <form action="https://formspree.io/f/xgvzkkgk" method="post">
+          <div class="input-row">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          </div>
+          <textarea id="message" name="message" placeholder="Message" required></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <p>&copy; 2025 Ian</p>
+    </div>
+  </div>
+</body>
+<script>
+  const navItems = document.querySelectorAll('.nav div');
+  const contentPages = document.querySelectorAll('.content-page');
+
+  navItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      contentPages.forEach(page => page.style.display = 'none');
+        contentPages[index].style.display = (index != 1 ? 'block' : 'flex');
+      navItems.forEach(nav => nav.style.backgroundColor = '');
+      item.style.backgroundColor = 'var(--bg-col)';
+    });
+  });
+  
+  function toggleInfo(btn) {
+    const item = btn.closest('.download-item');
+    const info = item.nextElementSibling;
+    if (info && info.classList.contains('download-info')) {
+      info.classList.toggle('hidden');
+    }
+  }
+</script>
+</html>
